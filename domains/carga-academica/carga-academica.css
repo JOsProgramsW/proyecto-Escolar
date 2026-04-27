@@ -1,0 +1,146 @@
+/* Estilos específicos para Carga Académica - complementan global.css */
+
+/* Heredamos el layout de dos paneles para que sea organizado */
+/* Layout Principal: Organiza la herramienta (izq) y los resultados (der) */
+main {
+    display: grid;
+    grid-template-columns: minmax(300px, 360px) minmax(0, 1fr);
+    gap: 40px;
+    padding: 40px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    align-items: start;
+}
+
+@media (max-width: 900px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Panel del Formulario (El "Controlador") */
+.panel-formulario {
+    background-color: var(--white);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border);
+    height: fit-content; /* Evita que el panel se estire innecesariamente */
+}
+
+.panel-formulario h2 {
+    color: var(--primario);
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--estados); /* Indicador sutil de sección activa */
+    padding-left: 12px;
+}
+
+/* Estilo de Inputs: Mejora la legibilidad */
+.panel-formulario label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--text-main);
+    font-size: 0.9rem;
+}
+
+.panel-formulario select,
+.panel-formulario input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    transition: all 0.2s ease;
+}
+
+/* Panel de Resultados (La Carga Académica) */
+.panel-visualizacion {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    min-width: 0;
+}
+
+.header-visualizacion {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+/* Contenedor de Tarjetas: Uso de Grid para orden automático */
+.contenedor-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* La Tarjeta de Materia: El cambio más importante */
+.Carga-card {
+   background: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border-left: 6px solid #22c55e; /* Verde de inscripción */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.Carga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.Carga-card h2 {
+    font-size: 1.25rem;
+    color: var(--primario);
+    margin: 0;
+}
+
+.Carga-card p {
+    margin: 0;
+    line-height: 1.45;
+}
+
+/* Estilo del Botón de Baja: Intuitivo y de advertencia */
+.btn-eliminar-carga {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #fff1f2;
+    color: #e11d48;
+    border: 1px solid #ffe4e6;
+    padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-eliminar-carga:hover {
+    background-color: #e11d48;
+    color: white;
+}
+
+/* Info de Créditos: UX para el alumno */
+.info-creditos {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+.titulo-seccion {
+    max-width: 1400px; /* Misma medida que el main */
+    margin: 30px auto; /* Centrado horizontal */
+    padding: 0 20px;   /* Mismo padding lateral que el main */
+    text-align: left;  /* O center, según prefieras, pero 'auto' lo mantendrá en el carril */
+    color: var(--primario);
+    font-size: 2rem;
+}

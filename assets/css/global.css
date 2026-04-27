@@ -1,0 +1,320 @@
+/* Estilos globales para toda la página */
+:root {
+  --primario: #1e293b;    /* Slate 800: Más moderno que el negro puro */
+
+  --estados: #3b82f6;     /* Azul vibrante para estados activos */
+
+  --fondo: #f8fafc;   /* Fondo muy suave para descansar la vista */
+
+  --text-main: #334155;
+
+  --white: #ffffff;
+
+  --border: #e2e8f0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; /* Cambia la fuente del texto */
+
+  margin: 0; /* Elimina el espacio exterior por defecto del navegador */
+
+  background-color: var(--fondo);
+
+  color: var(--text-main);
+  
+  display: flex;
+
+  flex-direction: column;
+
+  min-height: 100vh;
+
+}
+
+/* Estilos del encabezado */
+header {
+
+  background-color: var(--primario); /* Color de fondo oscuro */
+
+  color:var(--white); /* Color del texto */
+
+  padding: 1.5rem 2rem; /* Espacio interno alrededor del contenido */
+
+  box-shadow: 0 2px 10px rgba(10, 13, 43, 0.792);
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 1rem;
+}
+
+header h1{
+  margin: 0;
+
+  font-size: 1.5rem; 
+
+  font-weight: 600;
+
+  letter-spacing: -0.5px;
+}
+
+/* Estilos de la lista del menú */
+nav ul {
+  list-style: none; /* Quita los puntos de la lista */
+
+  display: flex; /* Coloca los elementos en fila horizontal */
+
+  flex-wrap: wrap;
+
+  gap: 25px; /* Espacio entre cada elemento del menú */
+
+  padding: 0;/* Elimina el espacio interno por defecto del navegador */
+
+  margin-top: 1rem; /* Quita espacio interno por defecto */
+}
+
+nav ul li a {
+  color: #94a3b8; /* Color del texto de los enlaces */
+
+  text-decoration: none;/* Quita el subrayado de los enlaces */
+
+  font-weight: 500;/* Fuente de peso medio para un aspecto más moderno */
+
+  font-size: 0.95rem;/* Tamaño de fuente ligeramente más pequeño */
+
+  transition: color 0.2s ease; /* Quita el subrayado de los enlaces */
+}
+
+nav ul li a:hover {
+
+  color: var(--white); /* Color del texto al pasar el mouse */
+
+}
+
+nav ul li a.active {
+
+  color: var(--estados); /* Color del texto para la página activa */
+
+  border-bottom: 2px solid var(--estados);
+
+  padding-bottom: 4px;
+
+}
+
+/* Estilos del contenido principal */
+main {
+  flex: 1; /* Permite que el contenido principal ocupe el espacio disponible */
+
+  padding: 40px 20px; /* Espacio interno para que no esté pegado a los bordes */
+
+  display: flex; /* Usa flexbox para organizar las secciones */
+
+  flex-direction: column;
+
+ justify-content: center;/* Centra horizontalmente el contenido */
+
+align-items: center;
+
+  width: 100%;
+
+  box-sizing: border-box;
+  
+}
+
+/* Estilos de cada sección */
+.login-card {
+  background-color: var(--white); /* Color de fondo claro */
+
+  padding: 2.5rem; /* Espacio interno dentro de la sección */
+
+  width: 100%; /* Ancho automático para adaptarse al contenido */
+
+  max-width: 400px; /* Ancho máximo para evitar que se extienda demasiado en pantallas grandes */
+
+  border-radius: 12px; /* Bord  es redondeados para un aspecto más suave */
+  
+  border: 1px solid var(--border); /* Borde sutil para definir los límites de la sección */
+
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05); /* Sombra para dar profundidad */
+
+  text-align: center;
+
+}
+.login-card {
+  margin-bottom: 2rem; /* Espacio debajo de cada sección para separarlas visualmente */
+}
+
+.icon-circle {
+  background-color: var(--fondo);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+    color: var(--estados);
+    font-size: 1.5rem;
+}
+
+.login-header h2 {
+    margin: 0;
+    color: var(--primario);
+    font-size: 1.6rem;
+}
+
+.login-header p {
+  color: #64748b;
+
+  font-size: 0.95rem;
+
+  margin-top: 0.5rem;
+}
+
+/* Inputs con Iconos Internos */
+.input-group {
+    position: relative;
+    margin-bottom: 1.2rem;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #94a3b8;
+    transition: color 0.3s;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 15px 14px 45px; /* Espacio para el icono */
+    margin: 0; /* Quitamos el margin del global */
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background-color: #fcfcfc;
+    font-size: 0.95rem;
+}
+
+.input-group input:focus {
+    border-color: var(--estados);
+    background-color: var(--white);
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.1);
+}
+
+/* Cambia el color del icono cuando el input tiene foco */
+.input-group input:focus + i {
+    color: var(--estados);
+}
+
+/* Botón con micro-interacción */
+.btn-login {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-login:hover {
+    background-color: #0f172a;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.3);
+}
+
+.btn-login:active {
+    transform: translateY(0);
+}
+
+/* Mensaje de error */
+.error-msg {
+    display: none;
+    color: #e11d48;
+    background-color: #fff1f2;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-top: 1rem;
+    border: 1px solid #ffe4e6;
+}
+/* Opcional: imagen del alumno */
+img {
+  border-radius: 8px; /* Bordes redondeados en la imagen */
+
+  margin-bottom: 10px; /* Espacio debajo de la imagen */
+
+  text-align: center;
+}
+
+input{
+  width: 100%;
+
+  padding: 12px 16px;
+
+  margin: 8px 0 20px;
+
+  display: inline-block;
+
+  border : 1px solid var(--border);
+
+  border-radius: 6px;
+
+  box-sizing: border-box;
+
+  transition: border-color 0.2s;
+}
+
+input:focus {
+ outline: none;
+
+ border-color: var(--estados);
+
+ background-color: #ffffff;
+
+ box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2);
+
+ transform: scale(1.01);
+
+ transition: all 0.2s ease;
+
+}
+
+button{
+  width: 100%;
+
+  background-color: var(--primario);
+
+  color: white;
+
+  padding: 12px;
+
+  border: none;
+
+  border-radius: 6px;
+
+  font-weight: 600;
+
+  cursor: pointer;
+
+  transition: background-color 0.3s;
+}
+
+button:hover {
+
+  background-color: #0f172a;
+  
+}
+
+footer {
+background-color: var(--primario);
+  color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  width: 100%; /* Obligatorio para que ocupe todo el ancho */
+  box-sizing: border-box; 
+  margin-top: auto; /* Empuja el footer al final de la pantalla */
+}

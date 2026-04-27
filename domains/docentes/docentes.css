@@ -1,0 +1,57 @@
+/* Estilos específicos para Docentes - complementan global.css */
+
+main {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+.Docente-card {
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.Docente-card h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--primario);
+  border-bottom: 2px solid var(--estados);
+  padding-bottom: 0.5rem;
+}
+
+.Docente-card h3 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: var(--primario);
+  border-bottom: 2px solid var(--estados);
+  padding-bottom: 0.5rem;
+}
+
+.Docente-card img {
+  display: block;
+  margin: 0 auto 1rem;
+  border-radius: 8px;
+}
+
+.Docente-card p {
+  margin: 0;
+  line-height: 1.4;
+  color: var(--text-main);
+}
+
+.Docente-card strong {
+  color: var(--primario);
+}

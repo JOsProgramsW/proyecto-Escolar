@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Login - Sistema Escolar</title>
+      <link rel="stylesheet" href="./assets/css/global.css">
+    <link rel="stylesheet" href="./assets/css/login.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión Escolar</h1>
+    </header>
+    <main>
+    <div class="login-card">
+        <div class="login-header">
+            <div class="icon-circle">
+                <i class="fa-solid fa-graduation-cap"></i>
+            </div>
+            <h2>Portal Escolar</h2>
+            <p>Ingresa tus credenciales para continuar</p>
+        </div>
+
+        <form id="loginForm">
+            <div class="input-group">
+                <i class="fa-solid fa-user"></i>
+                <input type="text" id="userInput" placeholder="Nombre de usuario" required>
+            </div>
+
+            <div class="input-group">
+                <i class="fa-solid fa-lock"></i>
+                <input type="password" id="passInput" placeholder="Contraseña" required>
+            </div>
+
+            <button type="submit" class="btn-login">
+                <span>Entrar al Sistema</span>
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            
+            <p id="errorMessage" class="error-msg">
+                <i class="fa-solid fa-circle-xmark"></i> Usuario o contraseña incorrectos
+            </p>
+        </form>
+    </div>
+    </main>
+    <footer>
+        <p>Desarrollado por Jose carlos hernandez alvarez, Rey David Ayala Noriega, Miguel Alexander Camacho Lopez, Victor Manuel Aldana Cazares</p>
+        <p>2026 - Sistema Escolar</p>
+    </footer>
+    <script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        // Detiene el envío automático del formulario
+        event.preventDefault();
+
+        // 1. Definimos las credenciales permitidas
+        const USER_AUTH = "admin";
+        const PASS_AUTH = "123";
+
+        // 2. Capturamos lo que el usuario escribió
+        const userValue = document.getElementById('userInput').value;
+        const passValue = document.getElementById('passInput').value;
+        const errorDisplay = document.getElementById('errorMessage');
+
+        // 3. Validación lógica
+        if (userValue === USER_AUTH && passValue === PASS_AUTH) {
+            // Si es correcto, redirigimos a la ruta que querías
+            window.location.href = "/domains/inicio/inicio.html";
+        } else {
+            // Si es incorrecto, mostramos el mensaje de error
+            errorDisplay.style.display = "block";
+            
+            // Opcional: limpiar el campo de contraseña para reintentar
+            document.getElementById('passInput').value = "";
+        }
+    });
+</script>
+</body>
+</html>

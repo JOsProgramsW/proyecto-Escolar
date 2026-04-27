@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carga Académica</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/assets/css/global.css">
+    <link rel="stylesheet" href="/domains/carga-academica/carga-academica.css">
+    <script src="/domains/carga-academica/carga-academica.js" defer></script>
+</head>
+<body> 
+    <header>
+        <h1>Sistema de Gestión Escolar</h1>
+        <nav>
+            <ul>
+        <li><a href="/domains/inicio/inicio.html">Inicio</a></li>
+        <li><a href="/domains/alumnos/alumnos.html">Alumnos</a></li>
+        <li><a href="/domains/materias/materias.html">Materias</a></li>
+        <li><a href="/domains/docentes/docentes.html">Docentes</a></li>
+        <li><a href="/domains/asignaciones/asignaciones.html">Asignaciones</a></li>
+        <li><a href="/domains/carga-academica/carga-academica.html" class="active">Carga Académica</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <h2 class="titulo-seccion">Carga Académica</h2>
+
+    <main>
+    <aside class="panel-formulario">
+        <h2>Inscribir Materias</h2>
+        <form id="form-carga">
+            <label for="select-alumno">Estudiante:</label>
+            <select id="select-alumno" required>
+                <option value="">Seleccionar Estudiante...</option>
+            </select>
+
+            <label for="select-materia">Materia:</label>
+            <select id="select-materia" required>
+                <option value="">Seleccionar Materia...</option>
+            </select>
+
+            <button type="submit" class="btn-asignar">
+                <i class="fa-solid fa-plus"></i> Cargar al Horario
+            </button>
+        </form>
+
+        <div class="info-creditos">
+            <p>Créditos Totales: <span id="total-creditos">0</span> / 50</p>
+        </div>
+    </aside>
+
+    <section class="panel-visualizacion">
+        <div class="header-visualizacion">
+            <h3>Materias Inscritas</h3>
+        </div>
+        <div class="contenedor-tarjetas" id="lista-carga">
+        </div>
+    </section>
+</main>
+
+<footer>
+    <p>Desarrollado por Jose Carlos Hernandez Alvarez</p>
+    <p>2026 - Sistema Escolar</p>
+</footer>
+</body>
+</html>
